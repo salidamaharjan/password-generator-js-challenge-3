@@ -1,15 +1,16 @@
 # password-generator-js-challenge-3)
-**[Password Generator](https://salidamaharjan.github.io/password-generator-js-challenge-3/)**
+**[Password Generator Page](https://salidamaharjan.github.io/password-generator-js-challenge-3/)**
 
-**[My GitHub Repo](https://github.com/salidamaharjan/password-generator-js-challenge-3)**
+**[My GitHub Repo Link](https://github.com/salidamaharjan/password-generator-js-challenge-3)**
 
 ## Description
-* This project is to create password generator using Java Script which displays a password according to the user's selection from various prompts.
-* A `generatePassword` function is created to do some work when called.
-* The function use methods like `parseInt()` to return integer, `Math.random(Math.floor())` to create a random number.
+* This project can be used to generate password.
+* JavaScript is used to generate a password, according to the user's selection from various prompts.
+* A `generatePassword` function is created to collect user input and generate a password accordingly.
+* The function use methods like `parseInt()` to return integer, `Math.floor(Math.random())` to create a random number which is used to select a random character from the user selected options.
 
 ## Installation
-N/A
+No specific installation required, simply click on the Password Generator page link provided.
 
 ## Usage
 The page looks like follow:
