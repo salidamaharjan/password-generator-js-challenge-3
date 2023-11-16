@@ -11,25 +11,25 @@ function writePassword() {
 function generatePassword() {
   //capturing the user input in a variable.
   var userInput = prompt("Create password? Select number between 8 and 128.");
-  //checking a condition 
-  if (userInput === null) {
-    alert("Please select a number greater than 8 and less than 128!!");
+  //checking a condition
+
+  var userNum = parseInt(userInput);
+
+  if (Number.isNaN(userNum)) {
+    alert("You must enter a valid number!!");
     return null;
   }
   //if condition to check the userInput less than 8 and greater than 128 and executing the alert accordingly.
-  if (userInput < 8) {
+
+  if (userNum < 8) {
     alert("Please select a number greater than 8!!");
     return null;
   }
-  if (userInput > 128) {
+  if (userNum > 128) {
     alert("Please select a number less than 128!!");
     return null;
   }
-  if (userInput === NaN) {
-    alert("Please enter a number greater than 8 and less than 128");
-    return null;
-  }
-  
+
   //Giving option to the user to include the given characters
   var includeNum = confirm("Do you want to include number?");
   var includeSpecialChar = confirm("Do you want to include special character?");
@@ -38,7 +38,7 @@ function generatePassword() {
   //creating an empty variable to add the character according to the user response
   var setOfChars = "";
   //creating variables to store different characters
-  var num = "01234567789";
+  var num = "0123456789";
   var specialChar = "!@#$%&*()+<>=?";
   var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var lowerCase = "abcdefghijklmnopqrstuvwxyz";
@@ -56,7 +56,12 @@ function generatePassword() {
     setOfChars += lowerCase;
   }
   //checking if the user select all the given option for including character
-  if (!includeNum && !includeSpecialChar && !includeUpperCase && !includesLowerCase) {
+  if (
+    !includeNum &&
+    !includeSpecialChar &&
+    !includeUpperCase &&
+    !includesLowerCase
+  ) {
     alert("Please select at least one option!!");
     return null;
   }
