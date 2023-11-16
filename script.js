@@ -11,6 +11,11 @@ function writePassword() {
 function generatePassword() {
   //capturing the user input in a variable.
   var userInput = prompt("Create password? Select number between 8 and 128.");
+  //checking a condition 
+  if (userInput === null) {
+    alert("Please select a number greater than 8 and less than 128");
+    return null;
+  }
   //if condition to check the userInput less than 8 and greater than 128 and executing the alert accordingly.
   if (userInput < 8) {
     alert("Please select a number greater than 8!!");
@@ -18,6 +23,7 @@ function generatePassword() {
   if (userInput > 128) {
     alert("Please select a number less than 128!!");
   }
+  
   //Giving option to the user to include the given characters
   var includeNum = confirm("Do you want to include number?");
   var includeSpecialChar = confirm("Do you want to include special character?");
@@ -45,13 +51,13 @@ function generatePassword() {
   }
   //creating variable  with empty string
   var newPassword = "";
-  for (var i = 0; i < userInput; i ++) {
+  for (var i = 0; i < userInput; i++) {
     newPassword += randomChars(setOfChars);
   }
   return newPassword;
 }
 //creating a function to generate random character
-function randomChars(set){
+function randomChars(set) {
   var randomNum = Math.floor(Math.random() * set.length);
   var randomChar = set[randomNum];
   return randomChar;
