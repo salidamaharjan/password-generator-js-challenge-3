@@ -25,6 +25,10 @@ function generatePassword() {
     alert("Please select a number less than 128!!");
     return null;
   }
+  if (userInput === NaN) {
+    alert("Please enter a number greater than 8 and less than 128");
+    return null;
+  }
   
   //Giving option to the user to include the given characters
   var includeNum = confirm("Do you want to include number?");
@@ -34,10 +38,10 @@ function generatePassword() {
   //creating an empty variable to add the character according to the user response
   var setOfChars = "";
   //creating variables to store different characters
-  var num = "012";
-  var specialChar = "!@#";
-  var upperCase = "ABC";
-  var lowerCase = "abc";
+  var num = "01234567789";
+  var specialChar = "!@#$%&*()+<>=?";
+  var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var lowerCase = "abcdefghijklmnopqrstuvwxyz";
   // checking if the user selects the given option as a true value and adding it to the setOfChars according to the user response
   if (includeNum) {
     setOfChars += num;
@@ -65,6 +69,7 @@ function generatePassword() {
 }
 //creating a function to generate random character
 function randomChars(set) {
+  //using Math.floor and Math.random method to get random index of the set
   var randomNum = Math.floor(Math.random() * set.length);
   var randomChar = set[randomNum];
   return randomChar;
