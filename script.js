@@ -13,15 +13,17 @@ function generatePassword() {
   var userInput = prompt("Create password? Select number between 8 and 128.");
   //checking a condition 
   if (userInput === null) {
-    alert("Please select a number greater than 8 and less than 128");
+    alert("Please select a number greater than 8 and less than 128!!");
     return null;
   }
   //if condition to check the userInput less than 8 and greater than 128 and executing the alert accordingly.
   if (userInput < 8) {
     alert("Please select a number greater than 8!!");
+    return null;
   }
   if (userInput > 128) {
     alert("Please select a number less than 128!!");
+    return null;
   }
   
   //Giving option to the user to include the given characters
@@ -48,6 +50,11 @@ function generatePassword() {
   }
   if (includesLowerCase) {
     setOfChars += lowerCase;
+  }
+  //checking if the user select all the given option for including character
+  if (!includeNum && !includeSpecialChar && !includeUpperCase && !includesLowerCase) {
+    alert("Please select at least one option!!");
+    return null;
   }
   //creating variable  with empty string
   var newPassword = "";
