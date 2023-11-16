@@ -9,8 +9,13 @@ function writePassword() {
 }
 //Creating generatePassword function;
 function generatePassword () {
-  prompt("Create password? Select number between 8 and 128.");
+  //capturing the user input in a variable.
+  var userInput =  prompt("Create password? Select number between 8 and 128.");
+  if ( userInput < 8 ) {
+    alert("Please select a number greater than 8!!");
+  }
 }
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
