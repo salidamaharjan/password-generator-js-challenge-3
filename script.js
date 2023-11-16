@@ -46,13 +46,16 @@ function generatePassword() {
   //creating variable  with empty string
   var newPassword = "";
   for (var i = 0; i < userInput; i ++) {
-    
+    newPassword += randomChars(setOfChars);
   }
-  
- 
-  return null;
+  return newPassword;
 }
-
+//creating a function to generate random character
+function randomChars(set){
+  var randomNum = Math.floor(Math.random() * set.length);
+  var randomChar = set[randomNum];
+  return randomChar;
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
