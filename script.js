@@ -43,10 +43,15 @@ function generatePassword() {
   if (includesLowerCase) {
     setOfChars += lowerCase;
   }
-
-  console.log(setOfChars);
+  //creating variable  with empty string
+  var newPassword = "";
+  
+  
+  
+ 
   return null;
 }
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
