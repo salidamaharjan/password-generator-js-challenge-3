@@ -8,21 +8,43 @@ function writePassword() {
   passwordText.value = password;
 }
 //Creating generatePassword function
-function generatePassword () {
+function generatePassword() {
   //capturing the user input in a variable.
-  var userInput =  prompt("Create password? Select number between 8 and 128.");
+  var userInput = prompt("Create password? Select number between 8 and 128.");
   //if condition to check the userInput less than 8 and greater than 128 and executing the alert accordingly.
-  if ( userInput < 8 ) {
+  if (userInput < 8) {
     alert("Please select a number greater than 8!!");
   }
-  if (userInput > 128 ) {
+  if (userInput > 128) {
     alert("Please select a number less than 128!!");
   }
-//Giving option to the user to include the given characters
+  //Giving option to the user to include the given characters
   var includeNum = confirm("Do you want to include number?");
   var includeSpecialChar = confirm("Do you want to include special character?");
   var includeUpperCase = confirm("Do you want to include upper case letter?");
   var includesLowerCase = confirm("Do you want to include lower case letter?");
+  //creating an empty variable to add the character according to the user response
+  var setOfChars = "";
+  //creating variables to store different characters
+  var num = "012";
+  var specialChar = "!@#";
+  var upperCase = "ABC";
+  var lowerCase = "abc";
+  // checking if the user selects the given option as a true value and adding it to the setOfChars according to the user response
+  if (includeNum) {
+    setOfChars += num;
+  }
+  if (includeSpecialChar) {
+    setOfChars += specialChar;
+  }
+  if (includeUpperCase) {
+    setOfChars += upperCase;
+  }
+  if (includesLowerCase) {
+    setOfChars += lowerCase;
+  }
+
+  console.log(setOfChars);
   return null;
 }
 
@@ -30,4 +52,3 @@ function generatePassword () {
 generateBtn.addEventListener("click", writePassword);
 
 // returns string
-
