@@ -45,8 +45,9 @@ function generatePassword() {
   }
   //creating variable  with empty string
   var newPassword = "";
-  
-  
+  for (var i = 0; i < userInput; i ++) {
+    
+  }
   
  
   return null;
